@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService {
                 .lastName(dto.getLastName())
                 .age(dto.getAge())
                 .email(dto.getEmail())
+                .course(dto.getCourse())
                 .build();
 
         user = userRepository.save(user);
@@ -53,6 +54,7 @@ public class UserServiceImpl implements UserService {
         existingUser.setLastName(dto.getLastName());
         existingUser.setAge(dto.getAge());
         existingUser.setEmail(dto.getEmail());
+        existingUser.setCourse(dto.getCourse());
 
         User updatedUser = userRepository.save(existingUser);
         return mapToDTO(updatedUser);
@@ -69,6 +71,7 @@ public class UserServiceImpl implements UserService {
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
                 .age(user.getAge())
+                .course(user.getCourse())
                 .build();
     }
 }
